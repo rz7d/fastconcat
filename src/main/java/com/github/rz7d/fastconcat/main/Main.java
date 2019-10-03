@@ -42,13 +42,13 @@ public final class Main implements PrivilegedExceptionAction<Void> {
         try (var out = FileChannel.open(Paths.get(output), CREATE_NEW, WRITE);
             var outLock = out.tryLock()) {
             if (outLock == null) {
-                throw new IOException("ファイルはすでに使用されています");
+                throw new IOException("出力ファイル " + output + " をロックできませんでした");
             }
             for (var input : inputs) {
                 try (var in = FileChannel.open(Paths.get(input), READ, WRITE);
                     var inLock = in.tryLock()) {
                     if (inLock == null) {
-                        throw new IOException("入力がすでに使用されています");
+                        throw new IOException("入力ファイル " + input + " をロックできませんでした");
                     }
                     transfer.transferAll(in, out);
                 }
