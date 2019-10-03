@@ -11,7 +11,7 @@ import java.security.PrivilegedExceptionAction;
 import java.util.Arrays;
 import java.util.List;
 
-import com.github.rz7d.fastconcat.transfer.BufferedTransfer;
+import com.github.rz7d.fastconcat.transfer.BufferedTransferer;
 
 public final class Main implements PrivilegedExceptionAction<Void> {
 
@@ -38,7 +38,7 @@ public final class Main implements PrivilegedExceptionAction<Void> {
 
     @Override
     public Void run() throws Exception {
-        var transfer = new BufferedTransfer();
+        var transfer = new BufferedTransferer();
         try (var out = FileChannel.open(Paths.get(output), CREATE_NEW, WRITE);
             var outLock = out.tryLock()) {
             if (outLock == null) {

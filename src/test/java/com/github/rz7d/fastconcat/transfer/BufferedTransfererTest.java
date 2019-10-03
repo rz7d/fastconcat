@@ -9,9 +9,9 @@ import java.nio.charset.StandardCharsets;
 
 import org.junit.jupiter.api.Test;
 
-import com.github.rz7d.fastconcat.transfer.BufferedTransfer;
+import com.github.rz7d.fastconcat.transfer.BufferedTransferer;
 
-final class TransferTest {
+final class BufferedTransfererTest {
 
     private static final byte[] EXPECTED = "testMessageIsHere テストメッセージです"
         .getBytes(StandardCharsets.UTF_8);
@@ -20,7 +20,7 @@ final class TransferTest {
     void testIntegrity() throws Exception {
         var out = new ByteArrayOutputStream(EXPECTED.length);
 
-        new BufferedTransfer().transferAll(
+        new BufferedTransferer().transferAll(
             Channels.newChannel(new ByteArrayInputStream(EXPECTED)),
             Channels.newChannel(out));
 

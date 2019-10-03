@@ -3,9 +3,9 @@ package com.github.rz7d.fastconcat.transfer;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-public final class UnbufferedTransfer implements TransferMethod<FileChannel, FileChannel> {
+public final class UnbufferedTransferer implements TransferMethod<FileChannel, FileChannel> {
 
-    public UnbufferedTransfer() {
+    public UnbufferedTransferer() {
     }
 
     @Override

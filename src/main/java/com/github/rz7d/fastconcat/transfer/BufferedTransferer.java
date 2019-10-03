@@ -7,11 +7,11 @@ import java.nio.channels.WritableByteChannel;
 
 import com.github.rz7d.fastconcat.util.SizeUnit;
 
-public final class BufferedTransfer implements TransferMethod<ReadableByteChannel, WritableByteChannel> {
+public final class BufferedTransferer implements TransferMethod<ReadableByteChannel, WritableByteChannel> {
 
     private final ByteBuffer buffer = ByteBuffer.allocateDirect((int) SizeUnit.MiB.toBytes(1536));
 
-    public BufferedTransfer() {
+    public BufferedTransferer() {
     }
 
     @Override
