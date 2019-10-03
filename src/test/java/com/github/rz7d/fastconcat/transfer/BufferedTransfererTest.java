@@ -13,7 +13,7 @@ import com.github.rz7d.fastconcat.transfer.BufferedTransferer;
 
 final class BufferedTransfererTest {
 
-    private static final byte[] EXPECTED = "testMessageIsHere テストメッセージです"
+    private static final byte[] EXPECTED = "testMessageIsHere"
         .getBytes(StandardCharsets.UTF_8);
 
     @Test
