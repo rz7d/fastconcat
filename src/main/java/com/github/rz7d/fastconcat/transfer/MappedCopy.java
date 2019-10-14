@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
 
-public final class MappedTransferer implements TransferMethod<FileChannel, FileChannel> {
+public final class MappedCopy implements CopyStrategy<FileChannel, FileChannel> {
 
-    public MappedTransferer() {
+    public MappedCopy() {
     }
 
     @Override
